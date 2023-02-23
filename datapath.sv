@@ -17,11 +17,21 @@ module datapath(input logic Clk, Reset,
     logic [15:0] PC_inc, PC_branch, PC_next;//instruction pointer 
     logic [15:0] MDR_next; 
     logic [2:0] SR1, reg_DR_IN;             //regfile inputs 
-    logic [2:0] cc_flag;                    //confi
+    logic [2:0] CC, CC_next;                    
+    logic BEN_next; 
     //instruction pointer logic 
     always_comb begin
         PC_inc = PC + 1; 
         PC_next = ADDR1_mux_out + ADDR2_mux_out; 
+    end
+
+    //branch condition logic 
+    always_comb begin 
+                    //neg               zero                pos
+        BEN_next = (IR[11] & CC[2]) + (IR[10] & CC[1]) + (IR[9] & CC[0]);
+        if(databus == 16'h0000) CC_next = 3'b010 //zero
+        else if(databus[15] == 1'b1) CC_next = 3'b100; //negative
+        else CC_next = 3'b001 //positive
     end
 
     //2:1 multiplexers select 
@@ -54,9 +64,9 @@ module datapath(input logic Clk, Reset,
     register MDR_reg(.clk(Clk), .reset(Reset), .load(LD_MDR), .D_In(MDR_next), .Q_Out(MDR)); 
 
     //LED register
-    register MDR_reg #(parameter N = 12) (.clk(Clk), .reset(Reset), .load(), .D_In(), .Q_Out()); 
+    register LED_reg #(parameter N = 12) (.clk(Clk), .reset(Reset), .load(LD_LED), .D_In(IR[11:0]), .Q_Out(LED)); 
     //condition codes status flags register 
-    register statusflag_reg #(parameter N = 3) (.clk(Clk), .reset(Reset), .load(), .D_In(), .Q_Out()); 
+    register CC_reg #(parameter N = 3) (.clk(Clk), .reset(Reset), .load(LD_CC), .D_In(CC_next), .Q_Out(CC)); 
     //branch enable register 
-    register BEN_reg #(parameter N = 1) (.clk(Clk), .reset(Reset), .load(), .D_In(), .Q_Out()); 
+    register BEN_reg #(parameter N = 1) (.clk(Clk), .reset(Reset), .load(LD_BEN), .D_In(BEN_next), .Q_Out(BEN)); 
 endmodule
