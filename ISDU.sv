@@ -15,7 +15,6 @@
 //    Spring 2017 Distribution
 //------------------------------------------------------------------------------
 
-
 module ISDU (   input logic         Clk, 
 									Reset,
 									Run,
@@ -58,6 +57,7 @@ module ISDU (   input logic         Clk,
 						S_18, 
 						S_33_1, 
 						S_33_2, 
+						S_33_3,
 						S_35, 
 						S_32, 
 						S_01}   State, Next_state;   // Internal state logic
@@ -106,15 +106,20 @@ module ISDU (   input logic         Clk,
 		unique case (State)
 			Halted : 
 				if (Run) 
-					Next_state = S_18;                      
+					//Next_state = S_18;                      
+					Next_state = PauseIR1;                      
 			S_18 : 
 				Next_state = S_33_1;
 			// Any states involving SRAM require more than one clock cycles.
 			// The exact number will be discussed in lecture.
+			//add one memory waiting state for devbrd demo 
+			//add state btwn 33_1 33_2 
 			S_33_1 : 
 				Next_state = S_33_2;
 			S_33_2 : 
 				Next_state = S_35;
+			S_33_3 : 
+				Next_state = S_35; 
 			S_35 : 
 				Next_state = PauseIR1;
 			// PauseIR1 and PauseIR2 are only for Week 1 such that TAs can see 
@@ -140,7 +145,8 @@ module ISDU (   input logic         Clk,
 						Next_state = S_18;
 				endcase
 			S_01 : 
-				Next_state = S_18;
+				Next_state = PauseIR1;
+				//Next_state = S_18;
 
 			// You need to finish the rest of states.....
 
