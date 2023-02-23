@@ -1,21 +1,21 @@
 module register
 		#(parameter N = 16)
-		(input		    clk, reset, load,
+		(input		    Clk, Reset, Load,
 		input			[N-1:0] D_In,
-		input 			[N-1:0] Q_Out);
+		output logic [N-1:0] Q_Out);
     reg [N-1:0] register; 
-    always_ff @( posedge clk ) begin 
-        Out <= register; 
+    always_ff @( posedge Clk ) begin 
+        Q_Out <= register; 
     end
     always_comb begin
         register = Q_Out; 
-        if(~reset) register = 0; 
-        else if(load) register = D_In; 
+        if(~Reset) register = 0; 
+        else if(Load) register = D_In; 
     end
 endmodule
 
 //8x16 general purpose register file
-module regfile(input reset, LD_REG,
+module regfile(input clk, reset, LD_REG,
                input [2:0] DR, SR2, SR1, //DR destination register (writing)
                input [15:0] D_In, 
                output logic [15:0] SR1_OUT, SR2_OUT);
@@ -23,12 +23,13 @@ module regfile(input reset, LD_REG,
     logic [7:0][15:0] register; //7:0 for 7 registers. addressed by 3 bits only 
     always_ff @( posedge clk ) begin 
         if(~reset)begin
-            genvar i; 
-            generate 
-                for (i=1; i<8; i++) begin: resetloop
-                    register[i] <= 16'h0000; 
-                end
-            endgenerate 
+//            genvar i; 
+//            generate 
+//                for (i=0; i<8; i++) begin: resetloop
+//                    register[i] <= 16'h0000; 
+//                end
+//            endgenerate 
+				register[0] <= 16'h0000; 
         end
         else if(LD_REG) begin
             case(DR)

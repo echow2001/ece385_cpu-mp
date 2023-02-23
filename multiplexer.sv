@@ -79,7 +79,7 @@ module mux4_1_onehot
 						4'b0010 :	Q_Out = B_In;
 						4'b0100 :	Q_Out = C_In;
 						4'b1000 :	Q_Out = D_In;
-						default: Out = 16'h0000; // must add default since we do not handle all cases explicitly
+						default: Q_Out = 16'h0000; // must add default since we do not handle all cases explicitly
 				endcase
 		end
 endmodule
