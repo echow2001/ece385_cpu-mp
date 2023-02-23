@@ -35,12 +35,12 @@ module datapath(input logic Clk, Reset,
                     .Q_Out(ADDR2_mux_out));
 
     //one hot 4:1 multiplexer for databus
-    mux4_1_onehot(.S({GateALU, GateMARMUX, GateMDR, GatePC}), .A_In(PC), .B_In(MDR), .C_In(PC_next), .D_In(ALU_out), .Q_Out(bus))
+    mux4_1_onehot(.S({GateALU, GateMARMUX, GateMDR, GatePC}), .A_In(PC), .B_In(MDR), .C_In(PC_next), .D_In(ALU_out), .Q_Out(databus))
 
     ALU(.A_in(reg_SR1_OUT), .B_In(ALU_B), .K(ALUK), .Out(ALU_out));
 
     //cpu register file
-
+    regfile registerfile(.reset(Reset), .LD_REG(LD_REG), .DR(reg_DR_IN), .SR2(IR[2:0]), .SR1(SR1), .D_In(databus), .SR1_OUT(ALU_A), .SR2_OUT(reg_SR2_OUT)); 
     //instruction register
     register IR_reg()
 endmodule
