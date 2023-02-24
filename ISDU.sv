@@ -142,7 +142,8 @@ module ISDU (   input logic         Clk,
 					// You need to finish the rest of opcodes.....
 
 					default : 
-						Next_state = S_18;
+						//Next_state = S_18;
+						Next_state = PauseIR1; 
 				endcase
 			S_01 : 
 				Next_state = PauseIR1;

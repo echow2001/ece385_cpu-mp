@@ -23,7 +23,7 @@ module slc3(
 	output logic [9:0] LED,
 	input logic [15:0] Data_from_SRAM,
 	output logic OE, WE,
-	output logic [6:0] HEX0, HEX1, HEX2, HEX3,
+	output logic [6:0] HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, HEX6, HEX7, 
 	output logic [15:0] ADDR,
 	output logic [15:0] Data_to_SRAM
 );
@@ -32,10 +32,19 @@ module slc3(
 // An array of 4-bit wires to connect the hex_drivers efficiently to wherever we want
 // For Lab 1, they will direclty be connected to the IR register through an always_comb circuit
 // For Lab 2, they will be patched into the MEM2IO module so that Memory-mapped IO can take place
-logic [3:0] hex_4[3:0]; 
-HexDriver hex_drivers[3:0] (hex_4, {HEX3, HEX2, HEX1, HEX0});
+//logic [3:0] hex_4[3:0]; 
+//HexDriver hex_drivers[3:0] (hex_4, {HEX3, HEX2, HEX1, HEX0});
 // This works thanks to http://stackoverflow.com/questions/1378159/verilog-can-we-have-an-array-of-custom-modules
 
+//cp1 demo show the instruction data register on the display
+HexDriver hex_driver7 (4'h1, HEX7);
+HexDriver hex_driver6 (4'h0, HEX6);
+HexDriver hex_driver5 (PC[7:4], HEX5);
+HexDriver hex_driver4 (PC[3:0], HEX4);
+HexDriver hex_driver3 (IR[15:12], HEX3);
+HexDriver hex_driver2 (IR[11:8], HEX2);
+HexDriver hex_driver1 (IR[7:4], HEX1);
+HexDriver hex_driver0 (IR[3:0], HEX0);
 
 
 
@@ -47,7 +56,6 @@ logic BEN, MIO_EN, DRMUX, SR1MUX;
 logic [1:0] PCMUX, ADDR2MUX, ALUK;
 logic [15:0] MDR_In;
 logic [15:0] MAR, MDR, IR, PC;
-
 
 // Connect MAR to ADDR, which is also connected as an input into MEM2IO
 //	MEM2IO will determine what gets put onto Data_CPU (which serves as a potential
@@ -61,7 +69,8 @@ datapath d0 (.*); //matched the signal names of SLC3 module signals
 
 Mem2IO memory_subsystem(
     .*, .Reset(Reset), .ADDR(ADDR), .Switches(SW),
-    .HEX0(hex_4[0][3:0]), .HEX1(hex_4[1][3:0]), .HEX2(hex_4[2][3:0]), .HEX3(hex_4[3][3:0]),
+    //.HEX0(hex_4[0][3:0]), .HEX1(hex_4[1][3:0]), .HEX2(hex_4[2][3:0]), .HEX3(hex_4[3][3:0]),
+	 .HEX0(), .HEX1(), .HEX2(), .HEX3(),
     .Data_from_CPU(MDR), .Data_to_CPU(MDR_In),
     .Data_from_SRAM(Data_from_SRAM), .Data_to_SRAM(Data_to_SRAM)
 );
