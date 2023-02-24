@@ -48,7 +48,7 @@ module datapath(input logic Clk, Reset,
                     .Q_Out(ADDR2_mux_out));
 
     //one hot 4:1 multiplexer for databus
-    mux4_1_onehot databus_mux(.S({GateALU, GateMARMUX, GateMDR, GatePC}), .A_In(PC), .B_In(MDR), .C_In(PC_next), .D_In(ALU_out), .Q_Out(databus));
+    mux4_1_onehot databus_mux(.S({GateALU, GateMARMUX, GateMDR, GatePC}), .A_In(PC), .B_In(MDR), .C_In(PC_branch), .D_In(ALU_out), .Q_Out(databus));
 
     ALU alu_module(.A_In(reg_SR1_OUT), .B_In(ALU_B), .K(ALUK), .Out(ALU_out));
 
@@ -65,7 +65,7 @@ module datapath(input logic Clk, Reset,
     register MDR_reg(.Clk(Clk), .Reset(Reset), .Load(LD_MDR), .D_In(MDR_next), .Q_Out(MDR)); 
 
     //LED register
-    register #(.N(12)) LED_reg(.Clk(Clk), .Reset(Reset), .Load(LD_LED), .D_In(IR[11:0]), .Q_Out(LED)); 
+    register #(.N(10)) LED_reg(.Clk(Clk), .Reset(Reset), .Load(LD_LED), .D_In(IR[9:0]), .Q_Out(LED)); 
     //condition codes status flags register 
     register #(.N(3)) CC_reg(.Clk(Clk), .Reset(Reset), .Load(LD_CC), .D_In(CC_next), .Q_Out(CC)); 
     //branch enable register 

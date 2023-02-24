@@ -62,7 +62,6 @@ module mux8_1
 		end
 endmodule
 
-
 module mux4_1_onehot
 		#(parameter N = 16)
 		(input [3:0] S,
@@ -79,7 +78,7 @@ module mux4_1_onehot
 						4'b0010 :	Q_Out = B_In;
 						4'b0100 :	Q_Out = C_In;
 						4'b1000 :	Q_Out = D_In;
-						default: Q_Out = 16'hffff; // must add default since we do not handle all cases explicitly
+						default: Q_Out = 16'hxxxx; // must add default since we do not handle all cases explicitly
 				endcase
 		end
 endmodule

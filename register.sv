@@ -9,7 +9,7 @@ module register
     end
     always_comb begin
         register = Q_Out; 
-        if(~Reset) register = 0; 
+        if(Reset) register = 0; 
         else if(Load) register = D_In; 
     end
 endmodule
