@@ -54,13 +54,29 @@ module ISDU (   input logic         Clk,
 	enum logic [3:0] {  Halted, 
 						PauseIR1, 
 						PauseIR2, 
-						S_18, 
-						S_33_1, 
-						S_33_2, 
-						S_33_3,
-						S_35, 
-						S_32, 
-						S_01}   State, Next_state;   // Internal state logic
+						S_00,
+						S_01, //
+						S_04,
+						S_05,
+						S_06,
+						S_07,
+						S_09,
+						S_12,
+						S_16_1,
+						S_16_2,
+						S_18, //
+						S_21,
+						S_22, 
+						S_23,
+						S_25_1,
+						S_25_2,
+						S_27,
+						S_32, //
+						S_33_1, //
+						S_33_2, //
+						S_33_3, //
+						S_35 // 
+						}   State, Next_state;   // Internal state logic 
 		
 	always_ff @ (posedge Clk)
 	begin
@@ -106,8 +122,8 @@ module ISDU (   input logic         Clk,
 		unique case (State)
 			Halted : 
 				if (Run) 
-					//Next_state = S_18;                      
-					Next_state = PauseIR1;                      
+					Next_state = S_18;                      
+					//Next_state = PauseIR1; //pause after every S18 for cp1                
 			S_18 : 
 				Next_state = S_33_1;
 			// Any states involving SRAM require more than one clock cycles.

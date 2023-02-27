@@ -1,0 +1,565 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/user/Documents/ece385/ece385lab5/simulation/modelsim
+vALU
+Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
+Z2 !s110 1677261509
+!i10b 1
+!s100 2KTMDF?SQL68z]=[B^?d:0
+Z3 !s11b Dg1SIo80bB@j0V0VzS_@n1
+I;9@kOi94@;nVLNX>eNk2z0
+Z4 VDg1SIo80bB@j0V0VzS_@n1
+S1
+R0
+w1677207553
+8/home/user/Documents/ece385/ece385lab5/alu.sv
+F/home/user/Documents/ece385/ece385lab5/alu.sv
+!i122 2
+L0 1 7
+Z5 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z6 !s108 1677261509.000000
+!s107 /home/user/Documents/ece385/ece385lab5/alu.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/user/Documents/ece385/ece385lab5|/home/user/Documents/ece385/ece385lab5/alu.sv|
+!i113 1
+Z7 o-sv -work work
+Z8 !s92 -sv -work work +incdir+/home/user/Documents/ece385/ece385lab5
+Z9 tCvgOpt 0
+n@a@l@u
+vdatapath
+R1
+R2
+!i10b 1
+!s100 l6:J^1]5;gLnP4kaenU7`3
+R3
+I@]h[8[>>A?4@9RV=i6@=>1
+R4
+S1
+R0
+w1677210498
+8/home/user/Documents/ece385/ece385lab5/datapath.sv
+F/home/user/Documents/ece385/ece385lab5/datapath.sv
+!i122 4
+L0 4 70
+R5
+r1
+!s85 0
+31
+R6
+!s107 /home/user/Documents/ece385/ece385lab5/datapath.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/user/Documents/ece385/ece385lab5|/home/user/Documents/ece385/ece385lab5/datapath.sv|
+!i113 1
+R7
+R8
+R9
+vHexDriver
+R1
+Z10 !s110 1677261508
+!i10b 1
+!s100 ?X1O`ID<ZNUkicS9LRP`f0
+R3
+IP3JRIC6Wmn[<nPciUOVjn3
+R4
+S1
+R0
+w1612570584
+8/home/user/Documents/ece385/ece385lab5/HexDriver.sv
+F/home/user/Documents/ece385/ece385lab5/HexDriver.sv
+!i122 0
+L0 1 27
+R5
+r1
+!s85 0
+31
+Z11 !s108 1677261508.000000
+!s107 /home/user/Documents/ece385/ece385lab5/HexDriver.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/user/Documents/ece385/ece385lab5|/home/user/Documents/ece385/ece385lab5/HexDriver.sv|
+!i113 1
+R7
+R8
+R9
+n@hex@driver
+vISDU
+R1
+R2
+!i10b 1
+!s100 dnVXm?Sbg_8g4lYSXNRjS2
+R3
+I`35nC1ejD9f8YkX3>cWe42
+R4
+S1
+R0
+w1677214532
+8/home/user/Documents/ece385/ece385lab5/ISDU.sv
+F/home/user/Documents/ece385/ece385lab5/ISDU.sv
+!i122 9
+L0 18 183
+R5
+r1
+!s85 0
+31
+R6
+!s107 /home/user/Documents/ece385/ece385lab5/ISDU.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/user/Documents/ece385/ece385lab5|/home/user/Documents/ece385/ece385lab5/ISDU.sv|
+!i113 1
+R7
+R8
+R9
+n@i@s@d@u
+vMem2IO
+R1
+R2
+!i10b 1
+!s100 X6g>`VIRRmOadc4n`N2KZ3
+R3
+I=4NQ;jz^YdkhdWCK<mS`k2
+R4
+S1
+R0
+Z12 w1675131358
+8/home/user/Documents/ece385/ece385lab5/Mem2IO.sv
+F/home/user/Documents/ece385/ece385lab5/Mem2IO.sv
+!i122 8
+L0 16 38
+R5
+r1
+!s85 0
+31
+R6
+!s107 /home/user/Documents/ece385/ece385lab5/Mem2IO.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/user/Documents/ece385/ece385lab5|/home/user/Documents/ece385/ece385lab5/Mem2IO.sv|
+!i113 1
+R7
+R8
+R9
+n@mem2@i@o
+Xmemory_contents_sv_unit
+R1
+Z13 DXx4 work 6 SLC3_2 0 22 <b>Di0>;WN`R8T]U@E_o>1
+R2
+VQ9B53gj@LJYYi`YcH;d1:1
+r1
+!s85 0
+!i10b 1
+!s100 fhNg^R6chSAZOBA[Z:NMc1
+IQ9B53gj@LJYYi`YcH;d1:1
+!i103 1
+S1
+R0
+Z14 w1674528052
+Z15 8/home/user/Documents/ece385/ece385lab5/memory_contents.sv
+Z16 F/home/user/Documents/ece385/ece385lab5/memory_contents.sv
+!i122 11
+L0 17 0
+R5
+31
+R6
+Z17 !s107 /home/user/Documents/ece385/ece385lab5/memory_contents.sv|
+Z18 !s90 -reportprogress|300|-sv|-work|work|+incdir+/home/user/Documents/ece385/ece385lab5|/home/user/Documents/ece385/ece385lab5/memory_contents.sv|
+!i113 1
+R7
+R8
+R9
+vmemory_parser
+R1
+R13
+DXx4 work 23 memory_contents_sv_unit 0 22 Q9B53gj@LJYYi`YcH;d1:1
+R2
+R4
+r1
+!s85 0
+!i10b 1
+!s100 LAA`A8>:L__U8Cm]01lgh1
+IXXN2]hnb7S7g@D@H[KmDI1
+!s105 memory_contents_sv_unit
+S1
+R0
+R14
+R15
+R16
+!i122 11
+L0 19 217
+R5
+31
+R6
+R17
+R18
+!i113 1
+R7
+R8
+R9
+vmux2_1
+R1
+R2
+!i10b 1
+!s100 W8eW`bJ?<PDTjFQMo`F5g1
+R3
+Ib24z<m8Hg7^<@AK:aSkdU1
+R4
+S1
+R0
+Z19 w1677210929
+Z20 8/home/user/Documents/ece385/ece385lab5/multiplexer.sv
+Z21 F/home/user/Documents/ece385/ece385lab5/multiplexer.sv
+!i122 3
+Z22 L0 1 15
+R5
+r1
+!s85 0
+31
+R6
+Z23 !s107 /home/user/Documents/ece385/ece385lab5/multiplexer.sv|
+Z24 !s90 -reportprogress|300|-sv|-work|work|+incdir+/home/user/Documents/ece385/ece385lab5|/home/user/Documents/ece385/ece385lab5/multiplexer.sv|
+!i113 1
+R7
+R8
+R9
+vmux4_1
+R1
+R2
+!i10b 1
+!s100 6hNS472PjE<g__2R6Nb9=1
+R3
+I[E@2F?LfUKO9IddZ7XcO20
+R4
+S1
+R0
+R19
+R20
+R21
+!i122 3
+L0 17 19
+R5
+r1
+!s85 0
+31
+R6
+R23
+R24
+!i113 1
+R7
+R8
+R9
+vmux4_1_onehot
+R1
+R2
+!i10b 1
+!s100 kd7ocG6<i1[DEfSDgHMK40
+R3
+IaWSUGM`HkhS8117Voi7e<0
+R4
+S1
+R0
+R19
+R20
+R21
+!i122 3
+L0 65 20
+R5
+r1
+!s85 0
+31
+R6
+R23
+R24
+!i113 1
+R7
+R8
+R9
+vmux8_1
+R1
+R2
+!i10b 1
+!s100 R]a_gQeD`6abRdR4foY6l0
+R3
+Ibache^=5nKmL`?6BBSBJF3
+R4
+S1
+R0
+R19
+R20
+R21
+!i122 3
+L0 37 27
+R5
+r1
+!s85 0
+31
+R6
+R23
+R24
+!i113 1
+R7
+R8
+R9
+vregfile
+R1
+R10
+!i10b 1
+!s100 o1bcXk<V9JMTkh`jBVWFn3
+R3
+I`6cRN2XU7IWDlNN5XaPP72
+R4
+S1
+R0
+Z25 w1677211140
+Z26 8/home/user/Documents/ece385/ece385lab5/register.sv
+Z27 F/home/user/Documents/ece385/ece385lab5/register.sv
+!i122 1
+L0 18 54
+R5
+r1
+!s85 0
+31
+R11
+Z28 !s107 /home/user/Documents/ece385/ece385lab5/register.sv|
+Z29 !s90 -reportprogress|300|-sv|-work|work|+incdir+/home/user/Documents/ece385/ece385lab5|/home/user/Documents/ece385/ece385lab5/register.sv|
+!i113 1
+R7
+R8
+R9
+vregister
+R1
+R10
+!i10b 1
+!s100 ghK15z?fPHzV9K[dImQUh3
+R3
+IfW9YnRCen7AWSF;nje5^]1
+R4
+S1
+R0
+R25
+R26
+R27
+!i122 1
+R22
+R5
+r1
+!s85 0
+31
+R11
+R28
+R29
+!i113 1
+R7
+R8
+R9
+vslc3
+R1
+R2
+!i10b 1
+!s100 ATi^4P9LZadV]jb<ojhMF1
+R3
+I2]CeAi<@R1mLzRNm0SGl[2
+R4
+S1
+R0
+w1677261354
+8/home/user/Documents/ece385/ece385lab5/slc3.sv
+F/home/user/Documents/ece385/ece385lab5/slc3.sv
+!i122 10
+L0 20 77
+R5
+r1
+!s85 0
+31
+R6
+!s107 /home/user/Documents/ece385/ece385lab5/slc3.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/user/Documents/ece385/ece385lab5|/home/user/Documents/ece385/ece385lab5/slc3.sv|
+!i113 1
+R7
+R8
+R9
+XSLC3_2
+R1
+R2
+!i10b 1
+!s100 URbbR<9GGnf=Ah>G<iXmC2
+R3
+I<b>Di0>;WN`R8T]U@E_o>1
+V<b>Di0>;WN`R8T]U@E_o>1
+S1
+R0
+R12
+8/home/user/Documents/ece385/ece385lab5/SLC3_2.sv
+F/home/user/Documents/ece385/ece385lab5/SLC3_2.sv
+!i122 7
+L0 24 0
+R5
+r1
+!s85 0
+31
+R6
+!s107 /home/user/Documents/ece385/ece385lab5/SLC3_2.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/user/Documents/ece385/ece385lab5|/home/user/Documents/ece385/ece385lab5/SLC3_2.sv|
+!i113 1
+R7
+R8
+R9
+n@s@l@c3_2
+vslc3_testtop
+R1
+R2
+!i10b 1
+!s100 d2XA>2F0Bi3hDd@k118ZR0
+R3
+IN@d;@9bIB7e0m>9;CK[@K2
+R4
+S1
+R0
+w1677213799
+8/home/user/Documents/ece385/ece385lab5/slc3_testtop.sv
+F/home/user/Documents/ece385/ece385lab5/slc3_testtop.sv
+!i122 12
+L0 4 29
+R5
+r1
+!s85 0
+31
+R6
+!s107 /home/user/Documents/ece385/ece385lab5/slc3_testtop.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/user/Documents/ece385/ece385lab5|/home/user/Documents/ece385/ece385lab5/slc3_testtop.sv|
+!i113 1
+R7
+R8
+R9
+vsync
+R1
+R2
+!i10b 1
+!s100 P<fT95Z9YgiZ@FXJ?Mz`@0
+R3
+IGl_=OYW2ZMQBH1FaY5chG0
+R4
+S1
+R0
+R12
+Z30 8/home/user/Documents/ece385/ece385lab5/synchronizers.sv
+Z31 F/home/user/Documents/ece385/ece385lab5/synchronizers.sv
+!i122 6
+L0 7 11
+R5
+r1
+!s85 0
+31
+R6
+Z32 !s107 /home/user/Documents/ece385/ece385lab5/synchronizers.sv|
+Z33 !s90 -reportprogress|300|-sv|-work|work|+incdir+/home/user/Documents/ece385/ece385lab5|/home/user/Documents/ece385/ece385lab5/synchronizers.sv|
+!i113 1
+R7
+R8
+R9
+vsync_r0
+R1
+R2
+!i10b 1
+!s100 b`Cfj9<kkHAMl7Rb[UK]02
+R3
+Ih8F_QfEK;o5[[M?5c@`jY2
+R4
+S1
+R0
+R12
+R30
+R31
+!i122 6
+L0 21 19
+R5
+r1
+!s85 0
+31
+R6
+R32
+R33
+!i113 1
+R7
+R8
+R9
+vsync_r1
+R1
+R2
+!i10b 1
+!s100 00n^5BE:aWDEdNb[[`<H31
+R3
+IR]`RE_P[EA]oA^?2EQ6U:3
+R4
+S1
+R0
+R12
+R30
+R31
+!i122 6
+L0 42 18
+R5
+r1
+!s85 0
+31
+R6
+R32
+R33
+!i113 1
+R7
+R8
+R9
+vtest_memory
+R1
+R2
+!i10b 1
+!s100 SJZQ6J?oF3We=ElF^Dcz[2
+R3
+IaL:W=hA3;>Afo8A6ebBJH1
+R4
+S1
+R0
+R12
+8/home/user/Documents/ece385/ece385lab5/test_memory.sv
+F/home/user/Documents/ece385/ece385lab5/test_memory.sv
+!i122 5
+L0 26 94
+R5
+r1
+!s85 0
+31
+R6
+!s107 /home/user/Documents/ece385/ece385lab5/test_memory.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/user/Documents/ece385/ece385lab5|/home/user/Documents/ece385/ece385lab5/test_memory.sv|
+!i113 1
+R7
+R8
+R9
+vtestbench_cp1
+R1
+R2
+!i10b 1
+!s100 I>LMhQ1;AfLk1937Xf6d91
+R3
+I2<Rib8S<ii2eRLFZ^FYlC1
+R4
+S1
+R0
+w1677261502
+8/home/user/Documents/ece385/ece385lab5/testbench.sv
+F/home/user/Documents/ece385/ece385lab5/testbench.sv
+!i122 13
+L0 1 114
+R5
+r1
+!s85 0
+31
+R6
+!s107 /home/user/Documents/ece385/ece385lab5/testbench.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/user/Documents/ece385/ece385lab5|/home/user/Documents/ece385/ece385lab5/testbench.sv|
+!i113 1
+R7
+R8
+R9
