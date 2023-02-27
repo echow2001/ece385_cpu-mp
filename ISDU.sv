@@ -136,8 +136,7 @@ module ISDU (   input logic         Clk,
 				Next_state = S_33_3;
 			S_33_3 : 
 				Next_state = S_35; 
-			S_35 : 
-				Next_state = PauseIR1;
+			S_35 : Next_state = S_32; //Next_state = PauseIR1;
 			// PauseIR1 and PauseIR2 are only for Week 1 such that TAs can see 
 			// the values in IR.
 			PauseIR1 : 
@@ -151,22 +150,41 @@ module ISDU (   input logic         Clk,
 				else 
 					Next_state = S_18;
 			S_32 : 
-				case (Opcode)
+				case (Opcode) //IR[15:12]
 					4'b0001 : 
-						Next_state = S_01;
-
-					// You need to finish the rest of opcodes.....
-
+						Next_state = S_01; // add 
+					4'b0101 : 
+						Next_state = S_05; // and
+					4'b1001 : 
+						Next_state = S_09; // not
+					4'b0000 : 
+						Next_state = S_00; // br
+					4'b1100 : 
+						Next_state = S_12; // jmp
+					4'b0100 : 
+						Next_state = S_04; // jsr 
+					4'b0110 : 
+						Next_state = S_06; // ldr
+					4'b0111 : 
+						Next_state = S_07; // str
+					4'1101 : 
+						Next_state = S_PauseIR1; // pause
 					default : 
-						//Next_state = S_18;
-						Next_state = PauseIR1; 
+						Next_state = S_18;
+						//Next_state = PauseIR1; //cp1 only
 				endcase
-			S_01 : 
-				Next_state = PauseIR1;
-				//Next_state = S_18;
-
-			// You need to finish the rest of states.....
-
+			S_00: begin
+				if(BEN) Next_state = S_22; 
+				else Next_state = S_18; 
+			end
+			S_01 : Next_state = PauseIR1; //Next_state = S_18;
+			S_01, S_05, S_09, S_12, S_16_2, S_21, S_22, S_27, : Next_state = S_18; 
+			S_04: Next_state = S_21; 
+			S_07: Next_state = S_23; 
+			S_16_1: Next_state = S_16_2;
+			S_23: Next_state = S_16_1; 
+			S_25_1: Next_state = S_25_2; 
+			S_25_2: Next_state = S_27; 
 			default : ;
 
 		endcase
@@ -206,7 +224,6 @@ module ISDU (   input logic         Clk,
 					// incomplete...
 				end
 
-			// You need to finish the rest of states.....
 
 			default : ;
 		endcase
