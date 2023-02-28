@@ -267,7 +267,7 @@ module ISDU (   input logic         Clk,
 			S_12: begin //JMP PC <=BaseR 
 				SR1MUX = 1'b1; //IR[11:9]
 				LD_PC = 1'b1; 
-				PCMUX = 2'b01; //alu_out
+				PCMUX = 2'b01; //PC_alu_out
 				ADDR2MUX = 2'b11; //IR[10:0]
 				ADDR1MUX = 1'b0; //reg_SR1
 			end
