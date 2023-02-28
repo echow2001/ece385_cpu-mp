@@ -236,8 +236,25 @@ module ISDU (   input logic         Clk,
 				SR1MUX = 1'b1; 
 				DRMUX = 1'b1; 
 			end
-			S_06: 
-			S_07: 
+
+
+			//these two same output? not sure
+			S_06: begin //MAR <= alu_B + off6 
+				LD_MAR = 1'b1;
+				SR1MUX = 1'b1; // IR[11:9]
+				ADDR1MUX = 1'b0; // PC
+				ADDR2MUX = 2'b01; // IR[8:0] off6
+				GateMARMUX = 1'b1; // mux removed?? check this later
+			end 
+			S_07: begin // /MAR <= alu_B + off6 
+				LD_MAR = 1'b1;
+				SR1MUX = 1'b1; // IR[11:9]
+				ADDR1MUX = 1'b1; // alu_A
+				ADDR2MUX = 2'b01; // IR[5:0] off6 
+				GateMARMUX = 1'b1; // mux removed?? check this later
+			end
+
+
 			S_09: begin //NOT R(DR) <= ~R(SR1)
 				SR2MUX = IR_5; 
 				ALUK = 2'b10; //alu_out = ~A
