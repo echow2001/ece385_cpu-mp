@@ -79,8 +79,10 @@ Mem2IO memory_subsystem(
 ISDU state_controller(
 	.*, .Reset(Reset), .Run(Run), .Continue(Continue),
 	.Opcode(IR[15:12]), .IR_5(IR[5]), .IR_11(IR[11]),
-   .Mem_OE(OE), .Mem_WE(WE)
-);
+   .Mem_OE(OE), .Mem_WE(WE), 
+   .GatePC, .GateMDR, .GateALU, .GateMARMUX, 
+   .LD_MAR, .LD_MDR, .LD_IR, .LD_BEN, .LD_CC, .LD_REG, .LD_PC, .LD_LED, 
+   .PCMUX, .DRMUX, .SR1MUX, .SR2MUX, .ADDR1MUX, .ADDR2MUX, .ALUK);
 
 // SRAM WE register
 //logic SRAM_WE_In, SRAM_WE;
