@@ -123,7 +123,7 @@ module ISDU (   input logic         Clk,
 			Halted : 
 				if (Run) 
 					Next_state = S_18;                      
-					//Next_state = PauseIR1; //pause after every S18 for cp1                
+					//Next_state = PauseIR1; //pause after every S_18 for cp1                
 			S_18 : 
 				Next_state = S_33_1;
 			// Any states involving SRAM require more than one clock cycles.
@@ -167,7 +167,7 @@ module ISDU (   input logic         Clk,
 						Next_state = S_06; // ldr
 					4'b0111 : 
 						Next_state = S_07; // str
-					4'1101 : 
+					4'b1101 : 
 						Next_state = S_PauseIR1; // pause
 					default : 
 						Next_state = S_18;
@@ -186,7 +186,6 @@ module ISDU (   input logic         Clk,
 			S_25_1: Next_state = S_25_2; 
 			S_25_2: Next_state = S_27; 
 			default : ;
-
 		endcase
 		
 		// Assign control signals based on current state
@@ -199,7 +198,7 @@ module ISDU (   input logic         Clk,
 					PCMUX = 2'b00;
 					LD_PC = 1'b1;
 				end
-			S_33_1 : 
+			S_33_1 : //MDR <= M 
 				Mem_OE = 1'b1;
 			S_33_2 : 
 				begin 
@@ -215,16 +214,74 @@ module ISDU (   input logic         Clk,
 			PauseIR2: ;
 			S_32 : 
 				LD_BEN = 1'b1;
-			S_01 : 
-				begin 
-					SR2MUX = IR_5;
-					ALUK = 2'b00;
-					GateALU = 1'b1;
-					LD_REG = 1'b1;
-					// incomplete...
-				end
-
-
+			S_01 : begin //ADD R(DR) <= R(SR1) + R(SR2)
+				SR2MUX = IR_5;
+				ALUK = 2'b00; // alu_out = A + B
+				GateALU = 1'b1;
+				LD_REG = 1'b1;
+				LD_CC = 1'b1; 
+				SR1MUX = 1'b1; 
+				DRMUX = 1'b1; 
+			end
+			S_00: LD_BEN = 1'b1; 
+			S_04: begin
+				
+			end
+			S_05: begin //AND R(DR) <= R(SR1) & R(SR2)
+				SR2MUX = IR_5;
+				ALUK = 2'b01; // alu_out = A & B
+				GateALU = 1'b1;
+				LD_REG = 1'b1;
+				LD_CC = 1'b1; 
+				SR1MUX = 1'b1; 
+				DRMUX = 1'b1; 
+			end
+			S_06: 
+			S_07: 
+			S_09: begin //NOT R(DR) <= ~R(SR1)
+				SR2MUX = IR_5; 
+				ALUK = 2'b10; //alu_out = ~A
+				GateALU = 1'b1; 
+				LD_REG = 1'b1;
+				LD_CC = 1'b1; 
+				SR1MUX = 1'b1; //IR[11:9]
+				DRMUX = 1'b1; //IR[11:9]
+			end
+			S_12: begin //JMP PC <=BaseR 
+				SR1MUX = 1'b1; //IR[11:9]
+				LD_PC = 1'b1; 
+				PCMUX = 2'b01; //alu_out
+				ADDR2MUX = 2'b11; //IR[10:0]
+				ADDR1MUX = 1'b0; //reg_SR1
+			end
+			S_16_1, S_16_2: Mem_WE = 1'b0; // M[MAR] <= MDR
+			S_21: begin //PC<=PC+off11
+				ADDR2MUX = 2'b11; // IR[10:0] off11
+				PCMUX = 2'b10; // bus
+				LD_PC = 1'b1; 
+			end
+			S_22: begin // PC <= PC + off9 
+				ADDR2MUX = 2'b10; // IR[8:0] off9 
+				PCMUX = 2'b10; // bus
+				LD_PC = 1'b1; 
+			end
+			S_23: begin // MDR <= SR 
+				ALUK = 2'b11; // A 
+				GateALU = 1'b1; 
+				LD_MDR = 1'b1; 
+			end
+			//wait for memory to ready before loading MDR similar to given example in S_33
+			S_25_1: Mem_OE = 1'b0 // MDR <= M[MAR] 
+			S_25_2: begin // MDR <= M[MAR]
+				Mem_OE = 1'b0;
+				LD_MDR = 1'b1;
+			end
+			S_27: begin // DR <= MDR
+				LD_CC = 1'b1; 
+				DRMUX = 1'b1; //IR[11:9]
+				GateMDR = 1'b1;
+				LD_REG = 1'b1;
+			end
 			default : ;
 		endcase
 	end 
