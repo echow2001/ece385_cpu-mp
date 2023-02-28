@@ -10,10 +10,10 @@ module ALU(input [15:0] A_In, B_In,
            output logic [15:0] Out);
     always_comb begin
         case(K)
-            2'b00: Out = A+B; 
-            2'b01: Out = A&B; 
-            2'b10: Out = ~A; 
-            2'b11: Out = A; 
+            2'b00: Out = A_In + B_In; 
+            2'b01: Out = A_In & B_In; 
+            2'b10: Out = ~A_In; 
+            2'b11: Out = A_In; 
         endcase 
     end 
 endmodule

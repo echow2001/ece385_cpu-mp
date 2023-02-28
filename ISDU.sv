@@ -51,7 +51,7 @@ module ISDU (   input logic         Clk,
 									Mem_WE
 				);
 
-	enum logic [3:0] {  Halted, 
+	enum logic [4:0] {  Halted, 
 						PauseIR1, 
 						PauseIR2, 
 						S_00,
@@ -168,7 +168,7 @@ module ISDU (   input logic         Clk,
 					4'b0111 : 
 						Next_state = S_07; // str
 					4'b1101 : 
-						Next_state = S_PauseIR1; // pause
+						Next_state = PauseIR1; // pause
 					default : 
 						Next_state = S_18;
 						//Next_state = PauseIR1; //cp1 only
@@ -288,7 +288,7 @@ module ISDU (   input logic         Clk,
 				LD_MDR = 1'b1; 
 			end
 			//wait for memory to ready before loading MDR similar to given example in S_33
-			S_25_1: Mem_OE = 1'b0 // MDR <= M[MAR] 
+			S_25_1: Mem_OE = 1'b0; // MDR <= M[MAR] 
 			S_25_2: begin // MDR <= M[MAR]
 				Mem_OE = 1'b0;
 				LD_MDR = 1'b1;
