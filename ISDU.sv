@@ -178,14 +178,14 @@ module ISDU (   input logic         Clk,
 				else Next_state = S_18; 
 			end
 			S_01 : Next_state = PauseIR1; //Next_state = S_18;
-			S_01, S_05, S_09, S_12, S_16_2, S_21, S_22, S_27, : Next_state = S_18; 
+			S_01, S_05, S_09, S_12, S_16_2, S_21, S_22, S_27 : Next_state = S_18; 
 			S_04: Next_state = S_21; 
 			S_07: Next_state = S_23; 
 			S_16_1: Next_state = S_16_2;
 			S_23: Next_state = S_16_1; 
 			S_25_1: Next_state = S_25_2; 
 			S_25_2: Next_state = S_27; 
-			default : ;
+			default : Next_state = S_18;
 		endcase
 		
 		// Assign control signals based on current state

@@ -11,7 +11,7 @@ logic [9:0] SW;
 logic Clk, Run, Continue; // the reset is result of continue & run. 
 logic [9:0] LED; 
 //logic CE, UB, LB, OE, WE; no need to break out signal in tb
-logic [6:0] HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, HEX6, HEX7; 
+logic [6:0] HEX0, HEX1, HEX2, HEX3, HEX4, HEX5; 
 // Instantiating the DUT
 // Make sure the module and signal names match with those in your design
 slc3_testtop toplevel0(.*);	

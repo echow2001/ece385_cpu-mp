@@ -23,7 +23,7 @@ module slc3(
 	output logic [9:0] LED,
 	input logic [15:0] Data_from_SRAM,
 	output logic OE, WE,
-	output logic [6:0] HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, HEX6, HEX7, 
+	output logic [6:0] HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, 
 	output logic [15:0] ADDR,
 	output logic [15:0] Data_to_SRAM
 );
@@ -70,7 +70,7 @@ datapath d0 (.*); //matched the signal names of SLC3 module signals
 Mem2IO memory_subsystem(
     .*, .Reset(Reset), .ADDR(ADDR), .Switches(SW),
     .HEX0(hex_4[0][3:0]), .HEX1(hex_4[1][3:0]), .HEX2(hex_4[2][3:0]), .HEX3(hex_4[3][3:0]),
-	 .HEX0(), .HEX1(), .HEX2(), .HEX3(),
+//	 .HEX0(), .HEX1(), .HEX2(), .HEX3(),
     .Data_from_CPU(MDR), .Data_to_CPU(MDR_In),
     .Data_from_SRAM(Data_from_SRAM), .Data_to_SRAM(Data_to_SRAM)
 );
