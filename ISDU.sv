@@ -273,7 +273,7 @@ module ISDU (   input logic         Clk,
 				ADDR2MUX = 2'b01; //IR[5:0]
 				ADDR1MUX = 1'b1; //reg_SR1
 			end
-			S_16_1, S_16_2: Mem_WE = 1'b0; // M[MAR] <= MDR
+			S_16_1, S_16_2: Mem_WE = 1'b1; // M[MAR] <= MDR
 			S_21: begin //PC<=PC+off11
 				ADDR2MUX = 2'b11; // IR[10:0] off11
 				PCMUX = 2'b10; // bus
@@ -284,8 +284,12 @@ module ISDU (   input logic         Clk,
 				PCMUX = 2'b01; // pc_branch
 				LD_PC = 1'b1; 
 			end
+			//store : state1: MAR <= (BaseR + SEXT(offset6)) from ALU; MDR <= R(SR)
+					//state2: M(MAR) <= MDR; -- assert Write Command on the RAM
+					//SR source register IR[11:9]
 			S_23: begin // MDR <= SR 
 				ALUK = 2'b11; // A 
+				SR1MUX = 1'b1; //IR[11:9]
 				GateALU = 1'b1; 
 				LD_MDR = 1'b1; 
 			end
