@@ -281,7 +281,7 @@ module ISDU (   input logic         Clk,
 			end
 			S_22: begin // PC <= PC + off9 
 				ADDR2MUX = 2'b10; // IR[8:0] off9 
-				PCMUX = 2'b10; // bus
+				PCMUX = 2'b01; // pc_branch
 				LD_PC = 1'b1; 
 			end
 			S_23: begin // MDR <= SR 
