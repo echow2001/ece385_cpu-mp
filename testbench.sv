@@ -34,7 +34,7 @@ initial begin: TEST_VECTORS
     //Reset = 0;
     Run = 0; 
     Continue = 0; 
-    SW = 16'h0000;
+    SW = 16'h0003;
     //#2 Reset = 1;
     #2 Run = 1;
     Continue = 1;

@@ -41,7 +41,7 @@ module datapath(input logic Clk, Reset,
     //mux2_1 MAR_mux(.S(MARMUX), .A_In(), .B_In(), .Q_Out());
     mux2_1 MDR_mux(.S(MIO_EN), .A_In(databus), .B_In(MDR_In), .Q_Out(MDR_next));
     mux2_1 #(.N(3)) DR_mux(.S(DRMUX), .A_In(3'b111), .B_In(IR[11:9]), .Q_Out(reg_DR_IN));
-    mux2_1 #(.N(3)) SR1_mux (.S(SR1MUX), .A_In(IR[11:9]), .B_In(IR[8:6]), .Q_Out(SR1)); 
+    mux2_1 #(.N(3)) SR1_mux (.S(SR1MUX), .B_In(IR[11:9]), .A_In(IR[8:6]), .Q_Out(SR1)); 
     //4:1 multiplexers select 
     mux4_1 PC_mux(.S(PCMUX), .A_In(PC_inc), .B_In(PC_branch), .C_In(databus), .D_In(16'h0000), .Q_Out(PC_next));
     mux4_1 ADDR2_mux(.S(ADDR2MUX), .A_In(16'h0000), .B_In({{10{IR[4]}}, IR[5:0]}), .C_In({{7{IR[4]}}, IR[8:0]}), .D_In({{5{IR[4]}}, IR[10:0]}), 

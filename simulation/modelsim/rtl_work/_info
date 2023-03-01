@@ -11,7 +11,7 @@ cModel Technology
 Z0 d/home/user/Documents/ece385/ece385lab5/simulation/modelsim
 vALU
 Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
-Z2 !s110 1677696970
+Z2 !s110 1677704408
 !i10b 1
 !s100 9a=@GT>M2=:<80FR`TLDW3
 Z3 !s11b Dg1SIo80bB@j0V0VzS_@n1
@@ -28,7 +28,7 @@ Z5 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z6 !s108 1677696970.000000
+Z6 !s108 1677704408.000000
 !s107 /home/user/Documents/ece385/ece385lab5/alu.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+/home/user/Documents/ece385/ece385lab5|/home/user/Documents/ece385/ece385lab5/alu.sv|
 !i113 1
@@ -40,13 +40,13 @@ vdatapath
 R1
 R2
 !i10b 1
-!s100 KYTAU7D4nW`i5Qc8OoVFR3
+!s100 dK3bLzB>ZeaTTn:`AHVCK0
 R3
-ILESX>^zbS_^7JRDJ=0cM;2
+IO[GUD[dD3eOlL4GY>jJQj0
 R4
 S1
 R0
-w1677695735
+w1677701940
 8/home/user/Documents/ece385/ece385lab5/datapath.sv
 F/home/user/Documents/ece385/ece385lab5/datapath.sv
 !i122 4
@@ -93,17 +93,17 @@ vISDU
 R1
 R2
 !i10b 1
-!s100 m]^cELYbE=idaEhO`jFIB1
+!s100 9K7Yf7YGDTFl[abF5kl421
 R3
-IDOb@EHEY[?_STQUYgKh5]1
+Ihjd04eO^i?h>=2mPJ:12^0
 R4
 S1
 R0
-w1677696959
+w1677704390
 8/home/user/Documents/ece385/ece385lab5/ISDU.sv
 F/home/user/Documents/ece385/ece385lab5/ISDU.sv
 !i122 9
-L0 18 290
+L0 18 292
 R5
 r1
 !s85 0
@@ -156,7 +156,7 @@ IQ9B53gj@LJYYi`YcH;d1:1
 !i103 1
 S1
 R0
-Z12 w1677695960
+Z12 w1677702829
 Z13 8/home/user/Documents/ece385/ece385lab5/memory_contents.sv
 Z14 F/home/user/Documents/ece385/ece385lab5/memory_contents.sv
 !i122 11
@@ -364,7 +364,7 @@ IPJAoXMb=`SFZ13nda;cWi1
 R4
 S1
 R0
-w1677603502
+w1677701907
 8/home/user/Documents/ece385/ece385lab5/slc3.sv
 F/home/user/Documents/ece385/ece385lab5/slc3.sv
 !i122 10
@@ -539,15 +539,15 @@ R8
 R9
 vtestbench_cp1
 R1
-R2
+!s110 1677704409
 !i10b 1
-!s100 2_KV`A7=zR:V]n>PX;H5f1
+!s100 JX;1>U9V<IS7jd63dz@1A2
 R3
-IA`WCZDd;eLVa16[2DjSbU0
+IVoY45I=`IZM;<zWn?`3zE1
 R4
 S1
 R0
-w1677693938
+w1677704092
 8/home/user/Documents/ece385/ece385lab5/testbench.sv
 F/home/user/Documents/ece385/ece385lab5/testbench.sv
 !i122 13

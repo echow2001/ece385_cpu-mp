@@ -180,6 +180,7 @@ module ISDU (   input logic         Clk,
 			//S_01 : Next_state = S_18; //PauseIR1; 
 			S_01, S_05, S_09, S_12, S_16_2, S_21, S_22, S_27 : Next_state = S_18; 
 			S_04: Next_state = S_21; 
+			S_06: Next_state = S_25_1; 
 			S_07: Next_state = S_23; 
 			S_16_1: Next_state = S_16_2;
 			S_23: Next_state = S_16_1; 
@@ -220,7 +221,7 @@ module ISDU (   input logic         Clk,
 				GateALU = 1'b1;
 				LD_REG = 1'b1;
 				LD_CC = 1'b1; 
-				SR1MUX = 1'b1; 
+				SR1MUX = 1'b1; //IR[11:9]
 				DRMUX = 1'b1; 
 			end
 			S_00: LD_BEN = 1'b1; 
@@ -233,26 +234,27 @@ module ISDU (   input logic         Clk,
 				GateALU = 1'b1;
 				LD_REG = 1'b1;
 				LD_CC = 1'b1; 
-				SR1MUX = 1'b1; 
+				SR1MUX = 1'b1; // IR[11:9]
 				DRMUX = 1'b1; 
 			end
 
 
 			//these two same output? not sure
-			S_06: begin //MAR <= alu_B + off6 
+			//base register B IR[8:6]
+			S_06, S_07: begin //MAR <= B + off6 
 				LD_MAR = 1'b1;
-				SR1MUX = 1'b1; // IR[11:9]
-				ADDR1MUX = 1'b0; // PC
-				ADDR2MUX = 2'b01; // IR[8:0] off6
-				GateMARMUX = 1'b1; // mux removed?? check this later
+				SR1MUX = 1'b0; // IR[8:6]
+				ADDR1MUX = 1'b1; //SR1_OUT
+				ADDR2MUX = 2'b01; //offset6 s_ext IR[5:0] 
+				GateMARMUX = 1'b1; // mux removed?? check this later 
 			end 
-			S_07: begin // /MAR <= alu_B + off6 
-				LD_MAR = 1'b1;
-				SR1MUX = 1'b1; // IR[11:9]
-				ADDR1MUX = 1'b0; // PC
-				ADDR2MUX = 2'b01; // IR[5:0] off6 
-				GateMARMUX = 1'b1; // mux removed?? check this later
-			end
+			// S_07: begin // /MAR <= alu_B + off6 
+			// 	LD_MAR = 1'b1;
+			// 	SR1MUX = 1'b1; // IR[11:9]
+			// 	ADDR1MUX = 1'b0; // PC
+			// 	ADDR2MUX = 2'b01; // IR[5:0] off6 
+			// 	GateMARMUX = 1'b1; // mux removed?? check this later
+			// end
 
 
 			S_09: begin //NOT R(DR) <= ~R(SR1)
@@ -265,7 +267,7 @@ module ISDU (   input logic         Clk,
 				DRMUX = 1'b1; //IR[11:9]
 			end
 			S_12: begin //JMP PC <=BaseR 
-				SR1MUX = 1'b1; //IR[11:9]
+				SR1MUX = 1'b0; //IR[8:6]
 				LD_PC = 1'b1; 
 				PCMUX = 2'b01; //PC_alu_out
 				ADDR2MUX = 2'b01; //IR[5:0]
@@ -288,9 +290,9 @@ module ISDU (   input logic         Clk,
 				LD_MDR = 1'b1; 
 			end
 			//wait for memory to ready before loading MDR similar to given example in S_33
-			S_25_1: Mem_OE = 1'b0; // MDR <= M[MAR] 
+			S_25_1: Mem_OE = 1'b1; // MDR <= M[MAR] 
 			S_25_2: begin // MDR <= M[MAR]
-				Mem_OE = 1'b0;
+				Mem_OE = 1'b1;
 				LD_MDR = 1'b1;
 			end
 			S_27: begin // DR <= MDR
