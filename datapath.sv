@@ -36,7 +36,7 @@ module datapath(input logic Clk, Reset,
     end
 
     //2:1 multiplexers select 
-    mux2_1 SR2_mux(.S(SR2MUX), .A_In({{11{IR[4]}}, IR[4:0]}), .B_In(reg_SR2_OUT), .Q_Out(ALU_B)); 
+    mux2_1 SR2_mux(.S(SR2MUX), .B_In({{11{IR[4]}}, IR[4:0]}), .A_In(reg_SR2_OUT), .Q_Out(ALU_B)); 
     mux2_1 ADDR1_mux(.S(ADDR1MUX), .A_In(PC), .B_In(reg_SR1_OUT), .Q_Out(ADDR1_mux_out));
     //mux2_1 MAR_mux(.S(MARMUX), .A_In(), .B_In(), .Q_Out());
     mux2_1 MDR_mux(.S(MIO_EN), .A_In(databus), .B_In(MDR_In), .Q_Out(MDR_next));

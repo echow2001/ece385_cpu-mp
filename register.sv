@@ -22,13 +22,7 @@ module regfile(input clk, reset, LD_REG,
     //https://stackoverflow.com/questions/41492818/optimizing-the-registerfile-code-in-systemverilog
     logic [7:0][15:0] register; //7:0 for 7 registers. addressed by 3 bits only 
     always_ff @( posedge clk ) begin 
-        if(~reset)begin
-//            genvar i; 
-//            generate 
-//                for (i=0; i<8; i++) begin: resetloop
-//                    register[i] <= 16'h0000; 
-//                end
-//            endgenerate 
+        if(reset)begin
 			register[0] <= 16'h0000; 
 			register[1] <= 16'h0000; 
 			register[2] <= 16'h0000; 

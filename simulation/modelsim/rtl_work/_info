@@ -11,7 +11,7 @@ cModel Technology
 Z0 d/home/user/Documents/ece385/ece385lab5/simulation/modelsim
 vALU
 Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
-Z2 !s110 1677694521
+Z2 !s110 1677695747
 !i10b 1
 !s100 9a=@GT>M2=:<80FR`TLDW3
 Z3 !s11b Dg1SIo80bB@j0V0VzS_@n1
@@ -28,7 +28,7 @@ Z5 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z6 !s108 1677694521.000000
+Z6 !s108 1677695747.000000
 !s107 /home/user/Documents/ece385/ece385lab5/alu.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+/home/user/Documents/ece385/ece385lab5|/home/user/Documents/ece385/ece385lab5/alu.sv|
 !i113 1
@@ -40,13 +40,13 @@ vdatapath
 R1
 R2
 !i10b 1
-!s100 ZKhEABEkG8>`FKJ?0CGcO2
+!s100 KYTAU7D4nW`i5Qc8OoVFR3
 R3
-I:LN]DOHkTBMePABLZ]ZaB1
+ILESX>^zbS_^7JRDJ=0cM;2
 R4
 S1
 R0
-w1677694509
+w1677695735
 8/home/user/Documents/ece385/ece385lab5/datapath.sv
 F/home/user/Documents/ece385/ece385lab5/datapath.sv
 !i122 4
@@ -64,7 +64,7 @@ R8
 R9
 vHexDriver
 R1
-!s110 1677694520
+R2
 !i10b 1
 !s100 ?X1O`ID<ZNUkicS9LRP`f0
 R3
@@ -81,7 +81,7 @@ R5
 r1
 !s85 0
 31
-Z10 !s108 1677694520.000000
+R6
 !s107 /home/user/Documents/ece385/ece385lab5/HexDriver.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+/home/user/Documents/ece385/ece385lab5|/home/user/Documents/ece385/ece385lab5/HexDriver.sv|
 !i113 1
@@ -91,15 +91,15 @@ R9
 n@hex@driver
 vISDU
 R1
-R2
+Z10 !s110 1677695748
 !i10b 1
-!s100 BabhgmdHiWFFM6SC1ZhLj3
+!s100 VF@H82EgDomoZ5FLLnD3L1
 R3
-I11Pe6m772]l]?CBg]f1@N0
+I[hl0_?b8M^_]GMXlS2Zgg3
 R4
 S1
 R0
-w1677692820
+w1677695541
 8/home/user/Documents/ece385/ece385lab5/ISDU.sv
 F/home/user/Documents/ece385/ece385lab5/ISDU.sv
 !i122 9
@@ -108,7 +108,7 @@ R5
 r1
 !s85 0
 31
-R6
+Z11 !s108 1677695748.000000
 !s107 /home/user/Documents/ece385/ece385lab5/ISDU.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+/home/user/Documents/ece385/ece385lab5|/home/user/Documents/ece385/ece385lab5/ISDU.sv|
 !i113 1
@@ -118,7 +118,7 @@ R9
 n@i@s@d@u
 vMem2IO
 R1
-R2
+R10
 !i10b 1
 !s100 X6g>`VIRRmOadc4n`N2KZ3
 R3
@@ -126,7 +126,7 @@ I=4NQ;jz^YdkhdWCK<mS`k2
 R4
 S1
 R0
-Z11 w1675131358
+Z12 w1675131358
 8/home/user/Documents/ece385/ece385lab5/Mem2IO.sv
 F/home/user/Documents/ece385/ece385lab5/Mem2IO.sv
 !i122 8
@@ -135,7 +135,7 @@ R5
 r1
 !s85 0
 31
-R6
+R11
 !s107 /home/user/Documents/ece385/ece385lab5/Mem2IO.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+/home/user/Documents/ece385/ece385lab5|/home/user/Documents/ece385/ece385lab5/Mem2IO.sv|
 !i113 1
@@ -145,8 +145,8 @@ R9
 n@mem2@i@o
 Xmemory_contents_sv_unit
 R1
-Z12 DXx4 work 6 SLC3_2 0 22 <b>Di0>;WN`R8T]U@E_o>1
-R2
+Z13 DXx4 work 6 SLC3_2 0 22 <b>Di0>;WN`R8T]U@E_o>1
+R10
 VQ9B53gj@LJYYi`YcH;d1:1
 r1
 !s85 0
@@ -156,25 +156,25 @@ IQ9B53gj@LJYYi`YcH;d1:1
 !i103 1
 S1
 R0
-Z13 w1677694169
-Z14 8/home/user/Documents/ece385/ece385lab5/memory_contents.sv
-Z15 F/home/user/Documents/ece385/ece385lab5/memory_contents.sv
+Z14 w1677694169
+Z15 8/home/user/Documents/ece385/ece385lab5/memory_contents.sv
+Z16 F/home/user/Documents/ece385/ece385lab5/memory_contents.sv
 !i122 11
 L0 17 0
 R5
 31
-R6
-Z16 !s107 /home/user/Documents/ece385/ece385lab5/memory_contents.sv|
-Z17 !s90 -reportprogress|300|-sv|-work|work|+incdir+/home/user/Documents/ece385/ece385lab5|/home/user/Documents/ece385/ece385lab5/memory_contents.sv|
+R11
+Z17 !s107 /home/user/Documents/ece385/ece385lab5/memory_contents.sv|
+Z18 !s90 -reportprogress|300|-sv|-work|work|+incdir+/home/user/Documents/ece385/ece385lab5|/home/user/Documents/ece385/ece385lab5/memory_contents.sv|
 !i113 1
 R7
 R8
 R9
 vmemory_parser
 R1
-R12
+R13
 DXx4 work 23 memory_contents_sv_unit 0 22 Q9B53gj@LJYYi`YcH;d1:1
-R2
+R10
 R4
 r1
 !s85 0
@@ -184,16 +184,16 @@ IP8Wfm1JcnTG[AK>IH1moj3
 !s105 memory_contents_sv_unit
 S1
 R0
-R13
 R14
 R15
+R16
 !i122 11
 L0 19 217
 R5
 31
-R6
-R16
+R11
 R17
+R18
 !i113 1
 R7
 R8
@@ -208,18 +208,18 @@ Ib24z<m8Hg7^<@AK:aSkdU1
 R4
 S1
 R0
-Z18 w1677693067
-Z19 8/home/user/Documents/ece385/ece385lab5/multiplexer.sv
-Z20 F/home/user/Documents/ece385/ece385lab5/multiplexer.sv
+Z19 w1677693067
+Z20 8/home/user/Documents/ece385/ece385lab5/multiplexer.sv
+Z21 F/home/user/Documents/ece385/ece385lab5/multiplexer.sv
 !i122 3
-Z21 L0 1 15
+Z22 L0 1 15
 R5
 r1
 !s85 0
 31
 R6
-Z22 !s107 /home/user/Documents/ece385/ece385lab5/multiplexer.sv|
-Z23 !s90 -reportprogress|300|-sv|-work|work|+incdir+/home/user/Documents/ece385/ece385lab5|/home/user/Documents/ece385/ece385lab5/multiplexer.sv|
+Z23 !s107 /home/user/Documents/ece385/ece385lab5/multiplexer.sv|
+Z24 !s90 -reportprogress|300|-sv|-work|work|+incdir+/home/user/Documents/ece385/ece385lab5|/home/user/Documents/ece385/ece385lab5/multiplexer.sv|
 !i113 1
 R7
 R8
@@ -234,9 +234,9 @@ I[E@2F?LfUKO9IddZ7XcO20
 R4
 S1
 R0
-R18
 R19
 R20
+R21
 !i122 3
 L0 17 19
 R5
@@ -244,8 +244,8 @@ r1
 !s85 0
 31
 R6
-R22
 R23
+R24
 !i113 1
 R7
 R8
@@ -260,9 +260,9 @@ IaWSUGM`HkhS8117Voi7e<0
 R4
 S1
 R0
-R18
 R19
 R20
+R21
 !i122 3
 L0 65 20
 R5
@@ -270,8 +270,8 @@ r1
 !s85 0
 31
 R6
-R22
 R23
+R24
 !i113 1
 R7
 R8
@@ -286,9 +286,9 @@ Ibache^=5nKmL`?6BBSBJF3
 R4
 S1
 R0
-R18
 R19
 R20
+R21
 !i122 3
 L0 37 27
 R5
@@ -296,8 +296,8 @@ r1
 !s85 0
 31
 R6
-R22
 R23
+R24
 !i113 1
 R7
 R8
@@ -306,24 +306,24 @@ vregfile
 R1
 R2
 !i10b 1
-!s100 E[IZGmeoi@Ba3CFWTVGKe1
+!s100 oJJP3UBbIfR@JMBUn9i6U3
 R3
-ICo]]b2VMgi8^DRgB98U<Y3
+IOl<VCeCWEIaP];c6U9J]U2
 R4
 S1
 R0
-Z24 w1677693050
-Z25 8/home/user/Documents/ece385/ece385lab5/register.sv
-Z26 F/home/user/Documents/ece385/ece385lab5/register.sv
+Z25 w1677695132
+Z26 8/home/user/Documents/ece385/ece385lab5/register.sv
+Z27 F/home/user/Documents/ece385/ece385lab5/register.sv
 !i122 1
-L0 18 61
+L0 18 55
 R5
 r1
 !s85 0
 31
-R10
-Z27 !s107 /home/user/Documents/ece385/ece385lab5/register.sv|
-Z28 !s90 -reportprogress|300|-sv|-work|work|+incdir+/home/user/Documents/ece385/ece385lab5|/home/user/Documents/ece385/ece385lab5/register.sv|
+R6
+Z28 !s107 /home/user/Documents/ece385/ece385lab5/register.sv|
+Z29 !s90 -reportprogress|300|-sv|-work|work|+incdir+/home/user/Documents/ece385/ece385lab5|/home/user/Documents/ece385/ece385lab5/register.sv|
 !i113 1
 R7
 R8
@@ -338,25 +338,25 @@ IfW9YnRCen7AWSF;nje5^]1
 R4
 S1
 R0
-R24
 R25
 R26
+R27
 !i122 1
-R21
+R22
 R5
 r1
 !s85 0
 31
-R10
-R27
+R6
 R28
+R29
 !i113 1
 R7
 R8
 R9
 vslc3
 R1
-R2
+R10
 !i10b 1
 !s100 ]M6@od==ozSAeBS;kX8i]2
 R3
@@ -373,7 +373,7 @@ R5
 r1
 !s85 0
 31
-R6
+R11
 !s107 /home/user/Documents/ece385/ece385lab5/slc3.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+/home/user/Documents/ece385/ece385lab5|/home/user/Documents/ece385/ece385lab5/slc3.sv|
 !i113 1
@@ -382,7 +382,7 @@ R8
 R9
 XSLC3_2
 R1
-R2
+R10
 !i10b 1
 !s100 URbbR<9GGnf=Ah>G<iXmC2
 R3
@@ -390,7 +390,7 @@ I<b>Di0>;WN`R8T]U@E_o>1
 V<b>Di0>;WN`R8T]U@E_o>1
 S1
 R0
-R11
+R12
 8/home/user/Documents/ece385/ece385lab5/SLC3_2.sv
 F/home/user/Documents/ece385/ece385lab5/SLC3_2.sv
 !i122 7
@@ -399,7 +399,7 @@ R5
 r1
 !s85 0
 31
-R6
+R11
 !s107 /home/user/Documents/ece385/ece385lab5/SLC3_2.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+/home/user/Documents/ece385/ece385lab5|/home/user/Documents/ece385/ece385lab5/SLC3_2.sv|
 !i113 1
@@ -409,7 +409,7 @@ R9
 n@s@l@c3_2
 vslc3_testtop
 R1
-R2
+R10
 !i10b 1
 !s100 fj6Lj7S0dYS142FWAc=eY0
 R3
@@ -426,7 +426,7 @@ R5
 r1
 !s85 0
 31
-R6
+R11
 !s107 /home/user/Documents/ece385/ece385lab5/slc3_testtop.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+/home/user/Documents/ece385/ece385lab5|/home/user/Documents/ece385/ece385lab5/slc3_testtop.sv|
 !i113 1
@@ -435,7 +435,7 @@ R8
 R9
 vsync
 R1
-R2
+R10
 !i10b 1
 !s100 P<fT95Z9YgiZ@FXJ?Mz`@0
 R3
@@ -443,25 +443,25 @@ IGl_=OYW2ZMQBH1FaY5chG0
 R4
 S1
 R0
-R11
-Z29 8/home/user/Documents/ece385/ece385lab5/synchronizers.sv
-Z30 F/home/user/Documents/ece385/ece385lab5/synchronizers.sv
+R12
+Z30 8/home/user/Documents/ece385/ece385lab5/synchronizers.sv
+Z31 F/home/user/Documents/ece385/ece385lab5/synchronizers.sv
 !i122 6
 L0 7 11
 R5
 r1
 !s85 0
 31
-R6
-Z31 !s107 /home/user/Documents/ece385/ece385lab5/synchronizers.sv|
-Z32 !s90 -reportprogress|300|-sv|-work|work|+incdir+/home/user/Documents/ece385/ece385lab5|/home/user/Documents/ece385/ece385lab5/synchronizers.sv|
+R11
+Z32 !s107 /home/user/Documents/ece385/ece385lab5/synchronizers.sv|
+Z33 !s90 -reportprogress|300|-sv|-work|work|+incdir+/home/user/Documents/ece385/ece385lab5|/home/user/Documents/ece385/ece385lab5/synchronizers.sv|
 !i113 1
 R7
 R8
 R9
 vsync_r0
 R1
-R2
+R10
 !i10b 1
 !s100 b`Cfj9<kkHAMl7Rb[UK]02
 R3
@@ -469,25 +469,25 @@ Ih8F_QfEK;o5[[M?5c@`jY2
 R4
 S1
 R0
-R11
-R29
+R12
 R30
+R31
 !i122 6
 L0 21 19
 R5
 r1
 !s85 0
 31
-R6
-R31
+R11
 R32
+R33
 !i113 1
 R7
 R8
 R9
 vsync_r1
 R1
-R2
+R10
 !i10b 1
 !s100 00n^5BE:aWDEdNb[[`<H31
 R3
@@ -495,25 +495,25 @@ IR]`RE_P[EA]oA^?2EQ6U:3
 R4
 S1
 R0
-R11
-R29
+R12
 R30
+R31
 !i122 6
 L0 42 18
 R5
 r1
 !s85 0
 31
-R6
-R31
+R11
 R32
+R33
 !i113 1
 R7
 R8
 R9
 vtest_memory
 R1
-R2
+R10
 !i10b 1
 !s100 SJZQ6J?oF3We=ElF^Dcz[2
 R3
@@ -521,7 +521,7 @@ IaL:W=hA3;>Afo8A6ebBJH1
 R4
 S1
 R0
-R11
+R12
 8/home/user/Documents/ece385/ece385lab5/test_memory.sv
 F/home/user/Documents/ece385/ece385lab5/test_memory.sv
 !i122 5
@@ -539,7 +539,7 @@ R8
 R9
 vtestbench_cp1
 R1
-R2
+R10
 !i10b 1
 !s100 2_KV`A7=zR:V]n>PX;H5f1
 R3
@@ -556,7 +556,7 @@ R5
 r1
 !s85 0
 31
-R6
+R11
 !s107 /home/user/Documents/ece385/ece385lab5/testbench.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+/home/user/Documents/ece385/ece385lab5|/home/user/Documents/ece385/ece385lab5/testbench.sv|
 !i113 1
