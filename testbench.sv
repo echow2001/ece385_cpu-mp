@@ -42,5 +42,7 @@ initial begin: TEST_VECTORS
     #4 Run = 1;
     #4 Continue = 0;
     #4 Continue = 1;
+    #256 Continue = 0; 
+    #4 Continue = 1; 
 end
 endmodule

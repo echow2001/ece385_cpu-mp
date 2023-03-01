@@ -29,7 +29,14 @@ module regfile(input clk, reset, LD_REG,
 //                    register[i] <= 16'h0000; 
 //                end
 //            endgenerate 
-				register[0] <= 16'h0000; 
+			register[0] <= 16'h0000; 
+			register[1] <= 16'h0000; 
+			register[2] <= 16'h0000; 
+			register[3] <= 16'h0000; 
+			register[4] <= 16'h0000; 
+			register[5] <= 16'h0000; 
+			register[6] <= 16'h0000; 
+			register[7] <= 16'h0000; 
         end
         else if(LD_REG) begin
             case(DR)
