@@ -12,7 +12,7 @@ module datapath(input logic Clk, Reset,
                 output logic [9:0] LED);
 
     logic [15:0] databus; 
-	 logic [15:0] ALU_A, ALU_B, ALU_out;     //alu
+	 logic [15:0] ALU_B, ALU_out;     //alu
     logic [15:0] reg_SR1_OUT, reg_SR2_OUT;  //regfile 
     logic [15:0] ADDR1_mux_out, ADDR2_mux_out;
     logic [15:0] PC_inc, PC_branch, PC_next;//instruction pointer 
@@ -54,7 +54,7 @@ module datapath(input logic Clk, Reset,
 
     //cpu register file
     regfile registerfile(.clk(Clk), .reset(Reset), .LD_REG(LD_REG), .DR(reg_DR_IN), .SR2(IR[2:0]), .SR1(SR1), .D_In(databus), 
-                         .SR1_OUT(ALU_A), .SR2_OUT(reg_SR2_OUT)); 
+                         .SR1_OUT(reg_SR1_OUT), .SR2_OUT(reg_SR2_OUT)); 
     //instruction register
     register IR_reg(.Clk(Clk), .Reset(Reset), .Load(LD_IR), .D_In(databus), .Q_Out(IR)); 
     //PC instruction pointer register 
