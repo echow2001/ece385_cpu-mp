@@ -226,7 +226,9 @@ module ISDU (   input logic         Clk,
 			end
 			S_00: LD_BEN = 1'b1; 
 			S_04: begin
-				
+				GatePC = 1'b1; 
+				LD_REG = 1'b1;
+				DRMUX = 1'b0; // 111 R7 
 			end
 			S_05: begin //AND R(DR) <= R(SR1) & R(SR2)
 				SR2MUX = IR_5;
