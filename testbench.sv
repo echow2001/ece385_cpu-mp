@@ -35,25 +35,75 @@ initial begin: TEST_VECTORS
     Run = 0; 
     Continue = 0; 
 
-    //SW = 16'h0003; //basic IO test1 
-    //SW = 16'h0006; //basic IO test2 
-    SW = 16'h000b; //basic IO test3 
+    //SW = 16'h0003; //basic IO test1 OK!
+    //SW = 16'h0006; //basic IO test2 OK!
+    //SW = 16'h000b; //basic IO test3 OK!    
+    // #96 Continue = 0; 
+    // #16 Continue = 1; 
+    // #96 Continue = 0; 
+    // #16 Continue = 1; 
+    // #96 Continue = 0; 
+    // #16 Continue = 1; 
+    // #96 Continue = 0; 
+    // #16 Continue = 1; 
+    // #96 Continue = 0; 
+    // #16 Continue = 1; 
+    // #96 Continue = 0; 
+    // #16 Continue = 1; 
+    // SW = 16'h0014; //XOR test 
+    // #2 Run = 1;
+    //    Continue = 1;
+    // #4 Run = 0;
+    // #4 Run = 1;
+    // #96 Continue = 0;
+    // #4 Continue = 1;
+
+
+    // SW = 16'h0014 //XOR test 
+    // #2 Run = 1;
+    //    Continue = 1;
+    // #4 Run = 0;
+    // #4 Run = 1;
+    // #4 Continue = 0;
+    // #4 Continue = 1;
+
+    // SW = 16'h0f0f; //A 
+    // #96 Continue = 0; 
+    // #16 Continue = 1; 
+    // SW = 16'hf0f0; //B
+    // #96 Continue = 0; 
+    // #16 Continue = 1; 
+    // //ans should be 0x03ff (truncated the 16bits val to 10bits ) 
+
+    // SW = 16'h0014; //run once test OK! 
+    // #2 Run = 1;
+    //    Continue = 1;
+    // #4 Run = 0;
+    // #4 Run = 1;
+    // #96 Continue = 0;
+    // #4 Continue = 1;
+    // #96 Continue = 0; 
+    // #16 Continue = 1; 
+    // #96 Continue = 0; 
+    // #16 Continue = 1; 
+    // #96 Continue = 0; 
+    // #16 Continue = 1; 
+    // #96 Continue = 0; 
+    // #16 Continue = 1; 
+    // #96 Continue = 0; 
+    // #16 Continue = 1; 
+    // #96 Continue = 0; 
+    // #16 Continue = 1; 
+
+    SW = 16'h0031; //multiplication test 
     #2 Run = 1;
        Continue = 1;
     #4 Run = 0;
     #4 Run = 1;
-    #4 Continue = 0;
-    #4 Continue = 1;
+    SW = 16'hffff; //A 
     #96 Continue = 0; 
     #16 Continue = 1; 
-    #96 Continue = 0; 
-    #16 Continue = 1; 
-    #96 Continue = 0; 
-    #16 Continue = 1; 
-    #96 Continue = 0; 
-    #16 Continue = 1; 
-    #96 Continue = 0; 
-    #16 Continue = 1; 
+    SW = 16'h0001; //B
     #96 Continue = 0; 
     #16 Continue = 1; 
 end

@@ -211,8 +211,10 @@ module ISDU (   input logic         Clk,
 					GateMDR = 1'b1;
 					LD_IR = 1'b1;
 				end
-			PauseIR1: ;
-			PauseIR2: ;
+			PauseIR1: begin // LEDs <= ledVect12
+				LD_LED = 1'b1; 
+			end
+			PauseIR2: ; // Wait on Continue
 			S_32 : 
 				LD_BEN = 1'b1;
 			S_01 : begin //ADD R(DR) <= R(SR1) + R(SR2)
