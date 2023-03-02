@@ -34,15 +34,27 @@ initial begin: TEST_VECTORS
     //Reset = 0;
     Run = 0; 
     Continue = 0; 
-    SW = 16'h0003;
-    //#2 Reset = 1;
+
+    //SW = 16'h0003; //basic IO test1 
+    //SW = 16'h0006; //basic IO test2 
+    SW = 16'h000b; //basic IO test3 
     #2 Run = 1;
-    Continue = 1;
+       Continue = 1;
     #4 Run = 0;
     #4 Run = 1;
     #4 Continue = 0;
     #4 Continue = 1;
-    #256 Continue = 0; 
-    #4 Continue = 1; 
+    #96 Continue = 0; 
+    #16 Continue = 1; 
+    #96 Continue = 0; 
+    #16 Continue = 1; 
+    #96 Continue = 0; 
+    #16 Continue = 1; 
+    #96 Continue = 0; 
+    #16 Continue = 1; 
+    #96 Continue = 0; 
+    #16 Continue = 1; 
+    #96 Continue = 0; 
+    #16 Continue = 1; 
 end
 endmodule

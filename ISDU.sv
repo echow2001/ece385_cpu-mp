@@ -216,12 +216,12 @@ module ISDU (   input logic         Clk,
 			S_32 : 
 				LD_BEN = 1'b1;
 			S_01 : begin //ADD R(DR) <= R(SR1) + R(SR2)
-				SR2MUX = IR_5;
+				SR2MUX = IR_5; // sel imm5, SR2_out
 				ALUK = 2'b00; // alu_out = A + B
 				GateALU = 1'b1;
 				LD_REG = 1'b1;
 				LD_CC = 1'b1; 
-				SR1MUX = 1'b1; //IR[11:9]
+				SR1MUX = 1'b1; //IR[11:9] 
 				DRMUX = 1'b1; 
 			end
 			S_00: LD_BEN = 1'b1; 
@@ -234,8 +234,8 @@ module ISDU (   input logic         Clk,
 				GateALU = 1'b1;
 				LD_REG = 1'b1;
 				LD_CC = 1'b1; 
-				SR1MUX = 1'b1; // IR[11:9]
-				DRMUX = 1'b1; 
+				SR1MUX = 1'b1; //IR[8:6]
+				DRMUX = 1'b1; //IR[11:9]
 			end
 
 
@@ -276,7 +276,7 @@ module ISDU (   input logic         Clk,
 			S_16_1, S_16_2: Mem_WE = 1'b1; // M[MAR] <= MDR
 			S_21: begin //PC<=PC+off11
 				ADDR2MUX = 2'b11; // IR[10:0] off11
-				PCMUX = 2'b10; // bus
+				PCMUX = 2'b01; // pc_branch 
 				LD_PC = 1'b1; 
 			end
 			S_22: begin // PC <= PC + off9 
