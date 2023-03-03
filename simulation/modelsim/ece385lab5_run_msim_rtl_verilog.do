@@ -34,19 +34,9 @@ if {[file exists rtl_work]} {
 vlib rtl_work
 vmap work rtl_work
 
-vlog -sv -work work +incdir+/home/user/Documents/ece385/ece385lab5 {/home/user/Documents/ece385/ece385lab5/HexDriver.sv}
-vlog -sv -work work +incdir+/home/user/Documents/ece385/ece385lab5 {/home/user/Documents/ece385/ece385lab5/register.sv}
-vlog -sv -work work +incdir+/home/user/Documents/ece385/ece385lab5 {/home/user/Documents/ece385/ece385lab5/alu.sv}
-vlog -sv -work work +incdir+/home/user/Documents/ece385/ece385lab5 {/home/user/Documents/ece385/ece385lab5/multiplexer.sv}
-vlog -sv -work work +incdir+/home/user/Documents/ece385/ece385lab5 {/home/user/Documents/ece385/ece385lab5/datapath.sv}
 vlog -sv -work work +incdir+/home/user/Documents/ece385/ece385lab5 {/home/user/Documents/ece385/ece385lab5/test_memory.sv}
-vlog -sv -work work +incdir+/home/user/Documents/ece385/ece385lab5 {/home/user/Documents/ece385/ece385lab5/synchronizers.sv}
 vlog -sv -work work +incdir+/home/user/Documents/ece385/ece385lab5 {/home/user/Documents/ece385/ece385lab5/SLC3_2.sv}
-vlog -sv -work work +incdir+/home/user/Documents/ece385/ece385lab5 {/home/user/Documents/ece385/ece385lab5/Mem2IO.sv}
-vlog -sv -work work +incdir+/home/user/Documents/ece385/ece385lab5 {/home/user/Documents/ece385/ece385lab5/ISDU.sv}
-vlog -sv -work work +incdir+/home/user/Documents/ece385/ece385lab5 {/home/user/Documents/ece385/ece385lab5/slc3.sv}
 vlog -sv -work work +incdir+/home/user/Documents/ece385/ece385lab5 {/home/user/Documents/ece385/ece385lab5/memory_contents.sv}
-vlog -sv -work work +incdir+/home/user/Documents/ece385/ece385lab5 {/home/user/Documents/ece385/ece385lab5/slc3_testtop.sv}
 
 vlog -sv -work work +incdir+/home/user/Documents/ece385/ece385lab5 {/home/user/Documents/ece385/ece385lab5/testbench.sv}
 

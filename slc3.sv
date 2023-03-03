@@ -37,10 +37,8 @@ HexDriver hex_drivers[3:0] (hex_4, {HEX3, HEX2, HEX1, HEX0});
 // This works thanks to http://stackoverflow.com/questions/1378159/verilog-can-we-have-an-array-of-custom-modules
 
 //cp1 demo show the instruction data register on the display
-//HexDriver hex_driver7 (4'h1, HEX7);
-//HexDriver hex_driver6 (4'h0, HEX6);
-//HexDriver hex_driver5 (PC[7:4], HEX5);
-//HexDriver hex_driver4 (PC[3:0], HEX4);
+HexDriver hex_driver5 (PC[7:4], HEX5);
+HexDriver hex_driver4 (PC[3:0], HEX4);
 //HexDriver hex_driver3 (IR[15:12], HEX3);
 //HexDriver hex_driver2 (IR[11:8], HEX2);
 //HexDriver hex_driver1 (IR[7:4], HEX1);

@@ -35,7 +35,15 @@ initial begin: TEST_VECTORS
     Run = 0; 
     Continue = 0; 
 
-    //SW = 16'h0003; //basic IO test1 OK!
+    SW = 16'h0003; //basic IO test1 OK!
+	 #2 Run = 1;
+       Continue = 1;
+    #4 Run = 0;
+    #4 Run = 1;
+	 #4 Continue = 0;
+	 #4 Continue = 1;
+	 #64 SW = 16'hffff;
+	 #64 SW = 16'h0000;  
     //SW = 16'h0006; //basic IO test2 OK!
     //SW = 16'h000b; //basic IO test3 OK!    
     // #96 Continue = 0; 
@@ -88,19 +96,19 @@ initial begin: TEST_VECTORS
     // #16 Continue = 1; 
 
 
-    SW = 16'h0031; //multiplication test 
-    #2 Run = 1;
-       Continue = 1;
-    #4 Run = 0;
-    #4 Run = 1;
-    #64 Continue = 0;
-    #4 Continue = 1;
-
-    #96 SW = 10'h002; //A 
-    #4 Continue = 0; 
-    #16 Continue = 1; 
-    #96 SW = 10'h003; //B
-    #4 Continue = 0; 
-    #16 Continue = 1; 
+//    SW = 16'h0031; //multiplication test 
+//    #2 Run = 1;
+//       Continue = 1;
+//    #4 Run = 0;
+//    #4 Run = 1;
+//    #64 Continue = 0;
+//    #4 Continue = 1;
+//
+//    #96 SW = 10'h002; //A 
+//    #4 Continue = 0; 
+//    #16 Continue = 1; 
+//    #96 SW = 10'h003; //B
+//    #4 Continue = 0; 
+//    #16 Continue = 1; 
 end
 endmodule

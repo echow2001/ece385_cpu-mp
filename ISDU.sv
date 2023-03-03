@@ -64,12 +64,16 @@ module ISDU (   input logic         Clk,
 						S_12,
 						S_16_1,
 						S_16_2,
+						S_16_3,
+						S_16_4, 
 						S_18, //
 						S_21,
 						S_22, 
 						S_23,
 						S_25_1,
 						S_25_2,
+						S_25_3,
+						S_25_4, 
 						S_27,
 						S_32, //
 						S_33_1, //
@@ -178,14 +182,18 @@ module ISDU (   input logic         Clk,
 				else Next_state = S_18; 
 			end
 			//S_01 : Next_state = S_18; //PauseIR1; 
-			S_01, S_05, S_09, S_12, S_16_2, S_21, S_22, S_27 : Next_state = S_18; 
+			S_01, S_05, S_09, S_12, S_16_4, S_21, S_22, S_27 : Next_state = S_18; 
 			S_04: Next_state = S_21; 
 			S_06: Next_state = S_25_1; 
 			S_07: Next_state = S_23; 
 			S_16_1: Next_state = S_16_2;
+			S_16_2: Next_state = S_16_3; 
+			S_16_3: Next_state = S_16_4; 
 			S_23: Next_state = S_16_1; 
 			S_25_1: Next_state = S_25_2; 
-			S_25_2: Next_state = S_27; 
+			S_25_2: Next_state = S_25_3; 
+			S_25_3: Next_state = S_25_4; 
+			S_25_4: Next_state = S_27; 
 			default : Next_state = S_18;
 		endcase
 		
@@ -201,7 +209,9 @@ module ISDU (   input logic         Clk,
 				end
 			S_33_1 : //MDR <= M 
 				Mem_OE = 1'b1;
-			S_33_2 : 
+			S_33_2 : //MDR <= M 
+				Mem_OE = 1'b1;
+			S_33_3 : 
 				begin 
 					Mem_OE = 1'b1;
 					LD_MDR = 1'b1;
@@ -265,7 +275,7 @@ module ISDU (   input logic         Clk,
 				ADDR2MUX = 2'b01; //IR[5:0]
 				ADDR1MUX = 1'b1; //reg_SR1
 			end
-			S_16_1, S_16_2: Mem_WE = 1'b1; // M[MAR] <= MDR
+			S_16_1, S_16_2, S_16_3: Mem_WE = 1'b1; // M[MAR] <= MDR
 			S_21: begin //PC<=PC+off11
 				ADDR2MUX = 2'b11; // IR[10:0] off11
 				PCMUX = 2'b01; // pc_branch 
@@ -287,7 +297,8 @@ module ISDU (   input logic         Clk,
 			end
 			//wait for memory to ready before loading MDR similar to given example in S_33
 			S_25_1: Mem_OE = 1'b1; // MDR <= M[MAR] 
-			S_25_2: begin // MDR <= M[MAR]
+			S_25_2: Mem_OE = 1'b1; // MDR <= M[MAR] 
+			S_25_3: begin // MDR <= M[MAR]
 				Mem_OE = 1'b1;
 				LD_MDR = 1'b1;
 			end
